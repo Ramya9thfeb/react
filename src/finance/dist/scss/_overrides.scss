@@ -1,0 +1,166 @@
+// Compatible with @progress/kendo-theme-bootstrap v.5.8.0
+
+%tb-typography {
+  @include typography-classes($tb-typography);
+}
+
+    .k-button{
+          border-bottom-width: 2px;
+                border-left-width: 2px;
+                border-right-width: 2px;
+                border-top-width: 2px;
+        
+}
+
+    .k-button.k-button-solid-base{
+          border-bottom-color: $tb-button-border;
+                border-left-color: $tb-button-border;
+                border-right-color: $tb-button-border;
+                border-top-color: $tb-button-border;
+        
+}
+
+    .k-button.k-button-md{
+            @extend %tb-typography-text-typography;
+      
+}
+
+    .k-button.k-button-solid-primary .k-button-text{
+        border-bottom-color: $tb-primary-button-border;
+                border-left-color: $tb-primary-button-border;
+                border-right-color: $tb-primary-button-border;
+                border-top-color: $tb-primary-button-border;
+        
+}
+
+    .k-input{
+        border-bottom-width: 2px;
+                border-left-width: 2px;
+                border-right-width: 2px;
+                border-top-width: 2px;
+        
+}
+
+    .k-input.k-input-solid{
+        border-bottom-color: $tb-input-border;
+                border-left-color: $tb-input-border;
+                border-right-color: $tb-input-border;
+                border-top-color: $tb-input-border;
+        
+}
+
+    .k-checkbox{
+        border-bottom-width: 4px;
+                border-left-width: 4px;
+                border-right-width: 4px;
+                border-top-width: 4px;
+        
+}
+
+    .k-checkbox-label{
+        color: $tb-label-color;
+                padding-bottom: 6px;
+                padding-left: 6px;
+                padding-right: 6px;
+                padding-top: 6px;
+        
+}
+
+    .k-grid .k-toolbar.k-grid-toolbar{
+            @extend %tb-typography-text-typography;
+              margin-bottom: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-top: 50px;
+                display: flex;
+                border-bottom-left-radius: 2px;
+                border-bottom-right-radius: 2px;
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+                align-items: start;
+                justify-content: start;
+        
+}
+.k-grouping-header {
+    color: #ffffff
+}
+.k-grid-header{
+    color: #ffffff;
+    font: size 14px; 
+
+}
+
+.k-grid thead, .k-grid tbody, .k-grid tfoot {
+    
+    font-size: 13px;
+    
+}
+.k-grid-pager {
+    border-style: outset;
+    background-color: #ffffff;
+}
+.k-pager-numbers .k-link.k-selected {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #23395d;
+}
+.k-pager-nav.k-link, .k-pager-refresh {
+    border-color:#dee2e6 ;
+    color: #0000FF;
+    background-color: #ffffff;
+    font-size: small;
+}
+.k-pager-numbers .k-link {
+    border-color: #dee2e6;
+    color: #0000FF;
+    background-color: #ffffff;
+}
+.k-pager-nav, .k-pager-numbers .k-link, .k-pager-refresh {
+    min-width: calc( 1.25em + 1.25rem + 1px);
+    height: calc( 0.25em + 1.55em + 2px);
+   
+}
+.k-pager-info{
+    font-size:14px;
+}
+.k-grid .k-alt {
+    background-color: #f8f9fa;
+}
+.k-pager-numbers{
+    font-size: small;
+}
+.k-input-md, .k-picker-md {
+    
+    line-height: 1.5;
+}
+.k-grid td, .k-grid .k-grid-content, .k-grid .k-grid-header-locked, .k-grid .k-grid-content-locked {
+    border-color: #ffffff;
+}
+
+.k-grid {
+
+    background-color: #b6d0e275
+}
+input.k-input, textarea.k-textarea {
+    padding: 0.225rem 0.25rem;
+}
+.k-dropdown-operator.k-picker-md .k-input-button {
+    padding: 0.225rem;
+}
+.k-button-md.k-icon-button {
+    padding: 0.225rem;
+}
+span.k-dropdownlist.k-picker.k-picker-md.k-rounded-md.k-picker-solid {
+    height: 35px;
+  
+}
+.k-input-solid {background-color: #fff;}
+
+.k-grid {
+
+    background-color: #b6d0e275
+}
+
+.k-grid .k-alt {
+    background-color: #f8f9fa;
+}
