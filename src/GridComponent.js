@@ -1,5 +1,4 @@
 import { Grid, GridColumn } from '@progress/kendo-react-grid';
-import '@progress/kendo-theme-material/dist/all.css';
 import { process } from '@progress/kendo-data-query';
 import { useEffect, useState } from 'react';
 import {GridPDFExport} from '@progress/kendo-react-pdf';
@@ -55,10 +54,10 @@ useEffect(()=>getProducts(),[ ]);
       
     >
       
-      <GridColumn field="id" title="Product ID"    />
-      <GridColumn field="userId" title="User ID" />
-      <GridColumn field="title" title="Description"  />
-      <GridColumn field="completed" title="Availability" cell={BooleanCell} filter='boolean' />
+      <GridColumn field="id" title="Product ID"   editable={true} />
+      <GridColumn field="userId" title="User ID" editable={true}/>
+      <GridColumn field="title" title="Description" editable={true} />
+      <GridColumn field="completed" title="Availability" cell={BooleanCell} filter='boolean'  />
       
       
     </Grid>
