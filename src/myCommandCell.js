@@ -1,8 +1,8 @@
-import * as React from "react";
-export const MyCommandCell = props => {
+
+export const MyCommandCell = (props) => {
   const {
     dataItem
-  } = props;
+  } = (props);
   const inEdit = dataItem[props.editField];
   const isNewItem = dataItem.ProductID === undefined;
   return inEdit ? <td className="k-command-cell">
@@ -16,8 +16,9 @@ export const MyCommandCell = props => {
       <button className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary k-grid-edit-command" onClick={() => props.edit(dataItem)}>
         Edit
       </button>
-      <button className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-grid-remove-command" onClick={() => props.delete("Confirm deleting: " + dataItem.ProductName) && props.remove(dataItem)}>
+      <button className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base k-grid-remove-command" onClick={() => ("Confirm deleting: " + dataItem.ProductName) && props.remove(dataItem)}>
         Remove
       </button>
     </td>;
 };
+

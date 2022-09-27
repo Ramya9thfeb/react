@@ -1,4 +1,4 @@
-import { sampleProducts } from "./sampleProducts";
+import { sampleProducts } from "./Data/sampleProducts";
 let data = [...sampleProducts];
 
 const generateId = data => data.reduce((acc, current) => Math.max(acc, current.ProductID), 0) + 1;
@@ -22,4 +22,3 @@ export const deleteItem = item => {
   data.splice(index, 1);
   return data;
 };
-

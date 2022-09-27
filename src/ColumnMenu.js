@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { GridColumnMenuFilter, GridColumnMenuCheckboxFilter } from '@progress/kendo-react-grid';
 import Products from './Data/Products.json';
 

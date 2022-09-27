@@ -7,9 +7,5 @@
 {"product_id":"f3f8c4b0-451d-4afa-9d17-2676ba973644","product_name":"9-2X","product_description":"Mandatory interactive solution","price":432574,"product_availability":false},
 {"product_id":"c80ccc4c-f85f-4d54-b163-14653deee324","product_name":"R-Class","product_description":"Upgradable directional emulation","price":489163,"product_availability":true},
 {"product_id":"78b55fd9-981b-471d-b07e-521eb774a5ab","product_name":"DTS","product_description":"Phased intermediate projection","price":539553,"product_availability":false},
-{"product_id":"2b0cf31b-038f-4a4d-9bc8-bcba81032f66","product_name":"1500","product_description":"Persistent composite adapter","price":482448,"product_availability":true},
-{"product_id":"37e5f481-1945-488f-91cf-b24917ee6f62","product_name":"Aerostar","product_description":"Centralized global hub","price":925765,"product_availability":false},
-{"product_id":"dd05b073-ca7e-4290-93cc-aad10d83a13d","product_name":"Transit Connect","product_description":"Monitored exuding archive","price":668556,"product_availability":false},
-{"product_id":"98d26b16-2b37-45f2-bff0-5e94f0c39edd","product_name":"Swift","product_description":"Business-focused grid-enabled protocol","price":969017,"product_availability":false},
-{"product_id":"a09b3b25-d0fa-4c43-a23c-a5f3dde53a19","product_name":"S60","product_description":"Extended next generation capability","price":707333,"product_availability":true},
-{"product_id":"271dde56-495d-4463-97f7-a1fa4aa85716","product_name":"Grand Voyager","product_description":"Compatible directional frame","price":628019,"product_availability":false}]
+{"product_id":"2b0cf31b-038f-4a4d-9bc8-bcba81032f66","product_name":"1500","product_description":"Persistent composite adapter","price":482448,"product_availability":true}
+]
