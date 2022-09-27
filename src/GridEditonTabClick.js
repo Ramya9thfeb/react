@@ -3,6 +3,7 @@ import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-g
 import { sampleProducts } from './Data/sampleProducts';
 import { MyCommandCell } from './MyCommandCell';
 import { insertItem, getItems, updateItem, deleteItem } from "./services";
+import index from './finance/dist/scss/index.scss';
 
 const GridEditonTabClick = () => {
   const editField = "inEdit";
@@ -65,18 +66,23 @@ const GridEditonTabClick = () => {
     setData([newDataItem, ...data]);
   };
 
-  return <Grid data={data} onItemChange={itemChange} editField={editField} dataItemKey={'ProductID'}>
+  return <Grid data={data} 
+  pageable={true}
+  filterable={true}
+  sortable={true}
+  onItemChange={itemChange} editField={editField} dataItemKey={'ProductID'}>
         <GridToolbar>
+         
           <button title="Add new" className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={addNew}>
             Add new
           </button>
         </GridToolbar>
-        <Column field="ProductID" title="Id" width="50px" editable={false} />
+        <Column field="ProductID" title="Id"  editable={false} />
         <Column field="ProductName" title="Product Name" />
         <Column field="FirstOrderedOn" title="First Ordered" editor="date" format="{0:d}" />
         <Column field="UnitsInStock" title="Units" editor="numeric" />
         <Column field="Discontinued" title="Discontinued"  />
-        <Column cell={CommandCell} width="240px" />
+        <Column cell={CommandCell}  />
       </Grid>;
 };
 

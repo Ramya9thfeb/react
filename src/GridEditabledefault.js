@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
 import Products1 from './Data/Products1.json';
@@ -10,14 +9,18 @@ const FilterCell=(props) =>{
     <td>{props.dataItem[props.filterCell] ? 'YES' : 'NO'} </td>
     )
   }
-  const initialState={
-    skip:0,
-    take:10,
+  const initialDataState = {
+    skip: 0,
+    take: 10,
   };
+  
 
 const GridEditabledefault = () => {
-    const [data, setData] = useState(Products1,initialState);
+    
+    const [data, setData] = useState(Products1);
     const [editID, setEditID] = useState(null);
+    const[result,setResult]=useState();
+    const[datastate,setDataState]=useState();
 
     const rowClick = event => {
         setEditID(event.dataItem.product_id);
@@ -46,16 +49,21 @@ const GridEditabledefault = () => {
         setData([newRecord, ...data]);
         setEditID(newRecord.product_id);
     };
+   
+    const onDataStateChange = (event) => {
+        setDataState(event.dataState);
+        setResult(process(Products1,event.dataState));
+      }
 
     return <Grid
         data={data.map(item => ({
             ...item,
             inEdit: item.product_id === editID
-        }))} editField="inEdit" onRowClick={rowClick} onItemChange={itemChange}
+        }))} editField="inEdit" onRowClick={rowClick} onItemChange={itemChange} 
         filterable={true}
         sortable={true}
-        
-        total={Products1.length}
+        onDataStateChange={onDataStateChange}
+        total={100}
         groupable={true}
         pageable={true}
     >

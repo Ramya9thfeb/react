@@ -1,7 +1,6 @@
 import React from 'react';
 import GridComponent from './GridComponent';
 import Header from './Header';
-
 import GridEditabledefault from './GridEditabledefault';
 import GridEditonTabClick from './GridEditonTabClick';
 import FormComponent from './BasicForm';
@@ -12,9 +11,9 @@ const App = () => {
   return (
     <>
     <FormDemo />
- {/* <GridComponent/>
+ <GridComponent/>
  <GridEditabledefault/>
- <GridEditonTabClick/> */}
+ <GridEditonTabClick/>
  </>
    
 

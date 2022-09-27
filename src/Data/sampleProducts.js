@@ -1,6 +1,6 @@
 export const sampleProducts = [{
     "ProductID": 1,
-    "ProductName": "Chai",
+    "ProductName": "Surgical Gloves",
     "SupplierID": 1,
     "CategoryID": 1,
     "QuantityPerUnit": "10 boxes x 20 bags",
@@ -17,7 +17,7 @@ export const sampleProducts = [{
     "FirstOrderedOn": new Date(1996, 8, 20)
   }, {
     "ProductID": 2,
-    "ProductName": "Chang",
+    "ProductName": "Covid Kit",
     "SupplierID": 1,
     "CategoryID": 1,
     "QuantityPerUnit": "24 - 12 oz bottles",
@@ -51,7 +51,7 @@ export const sampleProducts = [{
     "FirstOrderedOn": new Date(1996, 8, 26)
   }, {
     "ProductID": 4,
-    "ProductName": "Chef Anton's Cajun Seasoning",
+    "ProductName": "Hand Sanitizer",
     "SupplierID": 2,
     "CategoryID": 2,
     "QuantityPerUnit": "48 - 6 oz jars",
@@ -68,7 +68,7 @@ export const sampleProducts = [{
     "FirstOrderedOn": new Date(1996, 9, 19)
   }, {
     "ProductID": 5,
-    "ProductName": "Chef Anton's Gumbo Mix",
+    "ProductName": "Hand Sanitizer",
     "SupplierID": 2,
     "CategoryID": 2,
     "QuantityPerUnit": "36 boxes",
@@ -85,7 +85,7 @@ export const sampleProducts = [{
     "FirstOrderedOn": new Date(1996, 7, 17)
   }, {
     "ProductID": 6,
-    "ProductName": "Grandma's Boysenberry Spread",
+    "ProductName": "Mask",
     "SupplierID": 3,
     "CategoryID": 2,
     "QuantityPerUnit": "12 - 8 oz jars",

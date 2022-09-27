@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import {GridPDFExport} from '@progress/kendo-react-pdf';
 import index from './finance/dist/scss/index.scss';
 
+
 import axios from 'axios';
 
 
@@ -20,7 +21,7 @@ const GridComponent=()=>{
     take: 10,
   };
   const [products,setProducts]=useState('');
-  const[loading,setLoading]=useState(false);
+ 
 
  const getProducts=()=>{
       axios.get(baseURL)
@@ -33,15 +34,19 @@ const GridComponent=()=>{
 
 useEffect(()=>getProducts(),[ ]);
 
-  const [dataState,setDataState]=useState(products,initialDataState);
+  const [dataState,setDataState]=useState(products);
   const [result,setResult]=useState(process(products,dataState));
 
+  
   const onDataStateChange = (event) => {
     setDataState(event.dataState);
     setResult(process(products,event.dataState));
   }
+ 
   return (
+    
     <Grid
+    
       data={result}
       filterable={true}
       sortable={true}
@@ -53,6 +58,7 @@ useEffect(()=>getProducts(),[ ]);
       groupable={true}
       
     >
+      
       
       <GridColumn field="id" title="Product ID"   editable={true} />
       <GridColumn field="userId" title="User ID" editable={true}/>
