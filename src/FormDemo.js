@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MultiColumnComboBox, DropDownList } from "@progress/kendo-react-dropdowns";
 import { DateInput, DatePicker } from "@progress/kendo-react-dateinputs";
 import {Address} from './Data/Address';
+import {currency} from './Data/currency';
 import {
     Form,
     Field,
@@ -60,11 +61,31 @@ const FormDemo = () => {
                 <form className="k-form">
                     <fieldset>
                         <legend>SALES INVOICE</legend>
+
                         <div className="mb-3">
-                            <span>Entity Customer</span>
+                            <span>Customer Id</span>
 
                             <div className="mb-3">
-                                <DropDownList
+                                <Input
+                                    style={{
+                                        width: "100%",
+                                    }}
+
+                                    onChange={handleChanged}
+                                    name="cusid"
+                                    data={Id}
+                                    required={true}
+                                    defaultValue={''}
+                                />
+                            </div>
+                        
+
+                        </div>
+                        <div className="mb-3">
+                            <span> Customer Name</span>
+
+                            <div className="mb-3">
+                                <Input
                                     style={{
                                         width: "100%",
                                     }} 
@@ -80,25 +101,7 @@ const FormDemo = () => {
                             
 
                         </div>
-                        <div className="mb-3">
-                            <span>Customer Id</span>
-
-                            <div className="mb-3">
-                                <DropDownList
-                                    style={{
-                                        width: "100%",
-                                    }}
-
-                                    onChange={handleChanged}
-                                    name="cusid"
-                                    data={Id}
-                                    required={true}
-                                    defaultValue={''}
-                                />
-                            </div>
                         
-
-                        </div>
                         <div>
 
                             <div className="mb-3">
@@ -165,15 +168,17 @@ const FormDemo = () => {
 
 <div>
     <span>Currency </span><br/>
-    <Checkbox> USD</Checkbox> 
-        <br/>
-        <Checkbox> INR </Checkbox><br/>
-        <Checkbox> EURO </Checkbox><br/>
+    <DropDownList
+                                style={{
+                                    width: "100%",
+                                }}
+                                data={currency}
+                                required={true}
+                                defaultValue={''}
+                               />
+                            </div>
         
-  
-</div>
-
-                        <div>
+                          <div>
                         <span>Quantity</span>
                             <NumericTextBox
                                
