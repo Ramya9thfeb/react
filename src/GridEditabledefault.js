@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
 import Products1 from './Data/Products1.json';
 import { ColumnMenu, ColumnMenuCheckboxFilter } from './ColumnMenu';
-import index from './finance/dist/scss/index.scss';
+
 
 const FilterCell=(props) =>{
     return(

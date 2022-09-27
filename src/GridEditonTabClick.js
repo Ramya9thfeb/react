@@ -3,7 +3,6 @@ import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-g
 import { sampleProducts } from './Data/sampleProducts';
 import { MyCommandCell } from './MyCommandCell';
 import { insertItem, getItems, updateItem, deleteItem } from "./services";
-import index from './finance/dist/scss/index.scss';
 
 const GridEditonTabClick = () => {
   const editField = "inEdit";

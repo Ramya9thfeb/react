@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { MultiColumnComboBox, DropDownList } from "@progress/kendo-react-dropdowns";
+import { MultiColumnComboBox, DropDownList, MultiSelect } from "@progress/kendo-react-dropdowns";
 import { DateInput, DatePicker } from "@progress/kendo-react-dateinputs";
 import {Address} from './Data/Address';
-import {currency} from './Data/currency';
 import {
     Form,
     Field,
@@ -19,6 +18,15 @@ import {
 import { items } from './Data/items';
 import { Id } from './Data/Id';
 import { Name } from './Data/Name';
+import { currency } from './Data/currency';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button } from "@progress/kendo-react-buttons";
+
+
+
 
 const FormDemo = () => {
 
@@ -56,70 +64,44 @@ const FormDemo = () => {
         setState({ ...state, [name]: event.target.value });
     };
     return (
-        <div className="row example-wrapper">
-            <div className="col-xs-12 col-sm-6 offset-sm-3 example-col">
-                <form className="k-form">
-                    <fieldset>
-                        <legend>SALES INVOICE</legend>
+        <div className="body-content">
+            <div class='contentBox' >
+            <Container>
+                <div class="appContent">
+            <form className="k-form">
+            <div class="header">
+                        <h2>SALES INVOICE</h2>  </div>  
+     
+      <Row>
+        <Col><span>Customer Id</span>
 
-                        <div className="mb-3">
-                            <span>Customer Id</span>
+<div className="mb-3">
+    <Input
+        style={{
+            width: "100%",
+        }}
 
-                            <div className="mb-3">
+        onChange={handleChanged}
+        name="cusid"
+        data={Id}
+        defaultValue={''}
+    />
+</div>
+</Col>
+        <Col><span>Customer Name</span>
+        <div className="mb-3">
                                 <Input
-                                    style={{
-                                        width: "100%",
-                                    }}
-
-                                    onChange={handleChanged}
-                                    name="cusid"
-                                    data={Id}
-                                    required={true}
-                                    defaultValue={''}
-                                />
-                            </div>
-                        
-
-                        </div>
-                        <div className="mb-3">
-                            <span> Customer Name</span>
-
-                            <div className="mb-3">
-                                <Input
-                                    style={{
-                                        width: "100%",
-                                    }} 
+                                    name="customername"
                                     type="text"
+                                    
 
-                                    onChange={handleChanged}
-                                    name="customer"
-                                    data={Name}
-                                    required={true}
                                 /></div>
-                            
-                                
-                            
-
-                        </div>
-                        
-                        <div>
-
-                            <div className="mb-3">
-                                <span>Address</span>
-                                
-                                <DropDownList
-                                style={{
-                                    width: "100%",
-                                }}
-                                data={Address}
-                                required={true}
-                                defaultValue={''}
-                               />
-                            </div>
-
-                            <div className="mb-3">
-                                <span>Customer Type</span>
+                                </Col>
+                                </Row>
+                                <Row>
+        <Col><span>Customer Type</span>
                                 <br />
+                                <div className="mb-3" style={{display:"flex"}}>
                                 <RadioButton
                                     name="group1"
                                     value="New"
@@ -128,8 +110,6 @@ const FormDemo = () => {
                                     onChange={handleChange}
 
                                 />
-                                <br />
-
                                 <RadioButton
                                     name="group1"
                                     value="Existing"
@@ -137,87 +117,123 @@ const FormDemo = () => {
                                     label="Existing"
                                     onChange={handleChange}
                                 />
-                                <br />
-                            </div>
-                            <label className="k-form-field">
-                                <span>Invoice Date</span>
-                                <DatePicker
-                                    
-                                    name="Bill Date"
-                                    required={true}
-                                    format="dd-MMM-yyyy"
-                                    min={today}
-                                    defaultValue={today}
-                                />
-                            </label>
-                        </div>
-
-
-                        <div>
-                            <span>Items</span>
+                                </div>
+                                </Col>
+                                <Col>
+        
+        <span>Address</span>
+        <div className="mb-3"> 
+                                <DropDownList
+                                
+                                data={Address}
+                                defaultItem="Select Customer Address ..."
+                                filterable={true}
+                                
+                               /></div>
+                               
+                               </Col></Row>
+      
+        
+                     <Row>
+        <Col><span>Items</span>
+        <div className="mb-3">
                             <MultiColumnComboBox
                                 name="items"
-                                
+                                width="100%"
                                 data={items}
-                                required={true}
+                                
                                 columns={columns}
                                 textField={"name"}
-
+                                
                             />
-                        </div>
-
-<div>
-    <span>Currency </span><br/>
-    <DropDownList
-                                style={{
-                                    width: "100%",
-                                }}
-                                data={currency}
-                                required={true}
-                                defaultValue={''}
-                               />
-                            </div>
-        
-                          <div>
-                        <span>Quantity</span>
-                            <NumericTextBox
-                               
+                            </div></Col>
+        <Col>
+        <div className="mb-3">
+        <NumericTextBox
+                                value={qty}
                                 name="Quantity"
+                                width="100%"
+                                label="Quantity"
                                 
+                                // valid={qty > 0}
+                                // validationMessage={
+                                //     qty !== null ? '' : "Please enter proper Quantity!"
                                 
-                                onChange={handleChanged}
+                            /></div>
+                            
+                            </Col>
+      </Row>
+      
+      <Row>
+        <Col><span>Currency </span><br/>
+        <div className="mb-3">
+        <DropDownList
                                 
-                            />
-                        </div>
-
-                        <div>
-                        <span>Invoice Amount</span>
-                            <NumericTextBox
+                                data={currency}
+                                defaultItem="Select Custome Currency..."
+                                filterable={true}
+                                
+                               /></div>
+        </Col>
+       
+        <Col><span>Invoice Amount</span>
+        <div className="mb-3"> <NumericTextBox
                                 
                                 name="Total Invoice Amount"
                                 onChange={handleChanged}
-                            />
-                        </div>
-
-                        <div>
-                        <span>Net Amount</span>
-                            <NumericTextBox
+                            /></div>
+                            </Col>
+      </Row>
+      <Row>
+        <Col><span>Net Amount</span>
+        <div className="mb-3"> <NumericTextBox
                                 name="Net Amount"
                                 onChange={handleChanged}
                                
                             />
-                        </div>
-                        <div>
-                            <span>Tax Amount</span>
-                            <NumericTextBox      
+                            </div></Col>
+       
+        <Col> <span>Tax Amount</span>
+        <div className="mb-3">  <NumericTextBox      
                                 name="Tax Amount"
                                
-                            />
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+                            /></div>
+                            </Col>
+      </Row>
+      <Row>
+        <Col>
+        
+        <span>Entity</span>
+        <div className="mb-3">
+    <MultiSelect
+        
+        type="text"
+
+        onChange={handleChanged}
+        name="customer"
+        data={Name}
+        defaultItem="Select Customer Entity ..."
+        
+        
+    /></div>
+    </Col>
+    <Col></Col>
+       
+        
+      </Row>
+
+      
+      </form>
+      <div style={{padding:"10px"}}><Button themeColor={"primary"}>Submit</Button>
+   <div className="space"></div> <Button themeColor={"primary"}>Reset</Button></div>
+      </div>
+    </Container>
+    
+    </div>
+           
         </div>
+
+
     );
 
 }

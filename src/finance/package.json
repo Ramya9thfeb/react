@@ -1,8 +1,0 @@
-{
-  "name": "finance",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "@progress/kendo-theme-bootstrap": "5.8.0"
-  }
-}

@@ -1,0 +1,52 @@
+// $background-color: orange;
+// $text-color:#ffffff;
+// $kendo-checkbox-border-width:10px;
+// $kendo-checkbox-bg:rgb(118, 118, 207);
+// $kendo-input-default-width:100%;
+// $kendo-input-border-radius:'null';
+// $kendo-input-border-color:1px solid#ced4da
+   
+$primaryColor: #243a51;
+$borderColor:#e5e5e5;
+$darkGray:#4d4d4d;
+$darkGray2:#5e5e5e;
+$midGray:#9d9d9d;
+$white:#fff;
+$bodyBg:#ebebeb;
+$grey-light: #ededed;
+$brand-primary: tomato;
+$HeadingColor:#1b2a6b;
+$inputTextColor:#1b2a6b;
+$starColor:#ff3700;
+$errorColor:#ff0000;
+$urgent:#d40303;
+$inputBdrColor:#d9d9d9;
+$inputDisabledBg:#e1f1ff;
+$primaryBtnBg:#2e77c4;
+$secindaryBtnBg:#5dbcfe;
+$cancelBtnBg:#adadad;
+$labelColor:#323232;
+$browseBtnColor:#5dbcfe;
+
+// Grid Colors
+$tableHeaderBg:#104986;
+$oddRowBg:#dff1fd;
+$evenRowBg:#f2f2f2;
+$rowHoverBg:#d2d0d0;
+
+@mixin mar-pad-0 {
+    margin: 0px;
+        padding: 0px;
+}
+@mixin inputProperties {
+    height: 28px !important;
+    font-family: "Roboto", sans-serif !important;
+    font-size: 14px !important;
+    color: $inputTextColor !important;
+    font-weight: 500 !important;
+}
+@mixin activePageNo {
+    border-color:$primaryColor;
+    background: $primaryColor;
+    color: $white;
+}

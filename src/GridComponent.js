@@ -4,11 +4,11 @@ import {  useState,useEffect, useRef } from 'react';
 import {GridPDFExport} from '@progress/kendo-react-pdf';
 import {ExcelExport} from '@progress/kendo-react-excel-export';
 import { PDFExport } from '@progress/kendo-react-pdf';
-import index from './finance/dist/scss/index.scss';
+import {ColumnMenu,ColumnMenuCheckboxFilter} from './ColumnMenu';
+
 
 
 import axios from 'axios';
-
 
 const baseURL="https://jsonplaceholder.typicode.com/todos";
 const BooleanCell=(props) =>{
@@ -30,7 +30,7 @@ const GridComponent=()=>{
     skip: 0,
     take: 10,
   };
-  const [products,setProducts]=useState('');
+  const [products,setProducts]=useState('initialDataState');
  
 
  const getProducts=()=>{
@@ -44,7 +44,7 @@ const GridComponent=()=>{
 
 useEffect(()=>getProducts(),[ ]);
 
-  const [dataState,setDataState]=useState(products);
+  const [dataState,setDataState]=useState(initialDataState);
   const [result,setResult]=useState(process(products,dataState));
 
   
@@ -55,14 +55,14 @@ useEffect(()=>getProducts(),[ ]);
  
   return (
     <ExcelExport data={products} ref={_export}>
-    <Grid
+    <Grid 
+     data={result}
     pageable={true}
     filterable={true}
       sortable={true}
       groupable={true}
       total={products.length}
-      data={result}
-         
+     
       onDataStateChange={onDataStateChange}
       {...dataState}
       
@@ -82,7 +82,7 @@ useEffect(()=>getProducts(),[ ]);
       
       <GridColumn field="id" title="Product ID"   editable={true} />
       <GridColumn field="userId" title="User ID" editable={true}/>
-      <GridColumn field="title" title="Description" editable={true} />
+      <GridColumn field="title" title="Description" columnMenu={ColumnMenuCheckboxFilter} editable={true} />
       <GridColumn field="completed" title="Availability" cell={BooleanCell} filter='boolean'  />
       
       
